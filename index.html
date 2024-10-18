@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS 4700 Artificial Intelligence</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            background-color: #b22222; /* Softened red */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .subheader {
+            font-size: 1.2em;
+            color: #f4f4f4;
+            margin-top: -10px;
+        }
+        .main {
+            flex: 1;
+            padding: 20px;
+        }
+        .footer {
+            background-color: #b22222; /* Softened red */
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        a {
+            color: #b22222; /* Softened red */
+        }
+        .lectures table th, .lectures table td {
+            vertical-align: middle;
+        }
+        h4 {
+            color: #000000; /* Lightened text color #666; */
+        }
+        .grading-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .grading-scale, .assessments {
+            width: 48%;
+            margin-top: 20px;
+        }
+        .assessments .column {
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+        }
+        /*h2, h3 {
+            text-align: center;
+        }*/
+        .grading-container ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .lectures table thead {
+                display: none;
+            }
+            .lectures table tr {
+                display: block;
+                margin-bottom: 20px;
+            }
+            .lectures table td {
+                display: block;
+                text-align: right;
+                position: relative;
+                padding-left: 50%;
+            }
+            .lectures table td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 0;
+                width: 50%;
+                padding-left: 15px;
+                font-weight: bold;
+                text-align: left;
+            }
+            .grading-scale, .assessments {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>CS 4700: Artificial Intelligence</h1>
+        <div class="subheader">Spring 2025</div>
+    </div>
+    <div class="container main mt-4">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="course-info-tab" data-toggle="tab" href="#course-info" role="tab" aria-controls="course-info" aria-selected="true">Course Information</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="lecture-schedule-tab" data-toggle="tab" href="#lecture-schedule" role="tab" aria-controls="lecture-schedule" aria-selected="false">Schedule</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="homeworks-tab" data-toggle="tab" href="#homeworks" role="tab" aria-controls="homeworks" aria-selected="false">Homeworks</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="class-policy-tab" data-toggle="tab" href="#class-policy" role="tab" aria-controls="class-policy" aria-selected="false">Class Policy</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="syllabus" data-toggle="tab" href="./syllabus.pdf"  target="_blank" rel="noopener noreferrer" role="tab" aria-selected="false">Syllabus</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="course-info" role="tabpanel" aria-labelledby="course-info-tab">
+                <h4>Catalog Description and Purpose</h4>
+                <p>This course provides opportunities to learn the elements and techniques of artificial
+                    intelligence and how they apply to daily life.  Concepts and methods are illustrated with 
+                    real-world applications. </p>
+                <p>This course is designed for upper-level computer science undergraduate and first-year 
+                    graduate students. Artificial intelligence (AI) has a long history in computer science but 
+                    continues to grow due in part to new applications in diverse fields. The frontier areas of AI 
+                    include autonomous vehicles, face recognition, speech recognition, robotics, and many 
+                    more. The aim of this course is to provide foundational knowledge in the field of artificial 
+                    intelligence. This course assumes no previous knowledge of artificial intelligence concepts. </p>
+
+                <div>
+                    <h4>Course Staff</h4>
+                    <p>Instructor: <a href="https://tylerbanks.net/assets/Tyler_Banks_CV_Latest.pdf" target="_blank" rel="noopener noreferrer">Dr. Tyler Banks</a> - <a href="mailto:tylerbanks@ucmo.edu">tylerbanks@ucmo.edu</a></p>
+                </div>
+                <div>
+                    <h4>Textbook</h4>
+                    <p><a href="http://aima.cs.berkeley.edu/index.html" target="_blank" rel="noopener noreferrer">Artificial Intelligence: A Modern Approach, 4th Edition</a> by Peter Norvig and Stuart Russell</p>
+                </div>
+                <div>
+                    <h4>Prerequisites</h4>
+                    <p>(CS 2400 Discrete Structures or <a href="https://catalog.ucmo.edu/preview_course_nopop.php?catoid=17&coid=35456" target="_blank" rel="noopener noreferrer">Math 2410 Discrete Mathematics</a>) and 
+                        <a href="https://catalog.ucmo.edu/preview_course_nopop.php?catoid=23&coid=47148" target="_blank" rel="noopener noreferrer">CS 2300 Data Structures</a> or instructor consent </p>
+                </div>
+                <div>
+                    <h4>Objectives</h4>
+                    <p>Upon completion of this course, students will be able to: </p>
+                    <ul>
+                        <li>Understand the current trends of AI applications.</li>
+                        <li>Familiarize themselves with various techniques of AIs.</li>
+                        <li>Write computer scripts to solve different types of AI problems.</li>
+                    </ul>
+                    <p>In addition, a student taking this course for graduate credits will be able to: </p>
+                    <ul>
+                        <li>Understand the theoretical aspect of AI.</li>
+                        <li>Design an AI solution for practical applications.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Course Content Outline</h4>
+                    <ul>
+                        <li>Introduction to AI</li>
+                        <li>Agents</li>
+                        <li>Uninformed Search</li>
+                        <li>Informed Search</li>
+                        <li>Evolutionary algorithm (Genetic algorithm, etc.)</li>
+                        <li>Games</li>
+                        <li>Logic Agents</li>
+                        <li>Planning</li>
+                        <li>Decision</li>
+                        <li>Knowledge Representation and Expert System</li>
+                        <li>Uncertainty Reasoning (Fuzzy logic, Probabilistic Reasoning)</li>
+                        <li>Machine Learning (Supervised learning, Unsupervised learning, Reinforcement learning)</li>
+                        <li>Computer Vision</li>
+                        <li>Natural Language Processing</li>
+                        <li>Robots</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Grading</h4>
+                    <div class="container main mt-4">
+                        <div class="grading-container">
+                            <div class="grading-scale">
+                                <h5>Grading Scale</h5>
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Percent (%)</th>
+                                            <th>Grade</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>90 - 100</td>
+                                            <td>A</td>
+                                        </tr>
+                                        <tr>
+                                            <td>80 - 89</td>
+                                            <td>B</td>
+                                        </tr>
+                                        <tr>
+                                            <td>70 - 79</td>
+                                            <td>C</td>
+                                        </tr>
+                                        <tr>
+                                            <td>60 - 69</td>
+                                            <td>D</td>
+                                        </tr>
+                                        <tr>
+                                            <td>0 - 60</td>
+                                            <td>F</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="assessments">
+                                <div class="column">
+                                    <h5>Undergraduate</h5>
+                                    <ul>
+                                        <li>Midterm Exam: 15%</li>
+                                        <li>Final Exam: 25%</li>
+                                        <li>Reading Assignments: 10%</li>
+                                        <li>Programming Assignments: 50%</li>
+                                    </ul>
+                                </div>
+                                <div class="column">
+                                    <h5>Graduate</h5>
+                                    <ul>
+                                        <li>Midterm Exam: 10%</li>
+                                        <li>Final Exam: 20%</li>
+                                        <li>Reading Assignments: 10%</li>
+                                        <li>Programming Assignments: 50%</li>
+                                        <li>Term Project: 10%</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p><i>Graduate-level Assessment</i>: If a student intends to earn graduate credits in this course, he or she must make an 
+                    appointment with the instructor at the beginning of the semester. Furthermore, these 
+                    students will be required to complete a term project for an AI application; this additional 
+                    project is designed to ensure compliance with the university policy regarding courses that 
+                    can be taken for either graduate or undergraduate credits. </p>
+                    <p><i>Midterm and Final Exams</i>: The midterm and final exams will consist of questions that 
+                    emphasize the principles and practical aspects for AI. In addition, the midterm and final 
+                    exams will be divided into two sets of questions; one set for undergraduate students and 
+                    the other set for graduate students. The set of questions for undergraduate students will 
+                    focus on practical aspects while the set of questions for graduate students will emphasize 
+                    on both practical and theoretical aspects for AI. </p>
+                    <p><i>Writing Assignments</i>: Both undergraduate and graduate students will complete the same 
+                    writing assignments. </p>
+                    <p><i>Programming Assignments</i>: Both undergraduate and graduate students will complete the 
+                    same programming assignments. </p>
+                    <p><i>Term Project</i>: A student who is taking this course for graduate credits will complete a term 
+                    project. The student will design his/her own AI solution to a practical application. As a 
+                    result, the term project will strengthen students' critical thinking skills on the content of 
+                    AI. </p>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="lecture-schedule" role="tabpanel" aria-labelledby="lecture-schedule-tab">
+                <h2>Schedule</h2>
+                <div class="lectures mt-4">
+                    <table class="table table-striped">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Number</th>
+                                <th>Date</th>
+                                <th>Topics/Slides</th>
+                                <th>Readings</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="Number">Lecture 1</td>
+                                <td data-label="Date">01/14/2025</td>
+                                <td data-label="Topics/Slides"><a href="#">Introduction to AI</a></td>
+                                <td data-label="Readings">1.1</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Number">Lecture 2</td>
+                                <td data-label="Date">01/16/2025</td>
+                                <td data-label="Topics/Slides"><a href="#">Slides</a></td>
+                                <td data-label="Readings">Readings</td>
+                            </tr>
+                            <!-- Add more as needed -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="homeworks" role="tabpanel" aria-labelledby="homeworks-tab">
+                <h2>Homeworks</h2>
+                <div class="lectures mt-4">
+                    <table class="table table-striped">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Number</th>
+                                <th>Assignment</th>
+                                <th>Due Date</th>
+                                <th>Answers</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="Number">Homework 1</td>
+                                <td data-label="Assignment"><a href="#">Agent Search</a></td>
+                                <td data-label="Due Date">01/28/2025</td>
+                                <td data-label="Answers"><a href="#">-</a></td>
+                            </tr>
+                            <tr>
+                                <td data-label="Number">Homework 2</td>
+                                <td data-label="Assignment"><a href="#">Naive Bayes</a></td>
+                                <td data-label="Due Date">02/28/2025</td>
+                                <td data-label="Answers"><a href="#">-</a></td>
+                            </tr>
+                            <!-- Add more as needed -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="class-policy" role="tabpanel" aria-labelledby="class-policy-tab">
+                <div>
+                    <h4>Other Information and Policies</h4>
+                    <p>1. Your UCM email account will be used, frequently, by the instructor, to communicate messages. It is your responsibility to check this account regularly.</p>
+                    <p>2. Junior/Sensior students are held to a higher standard - late homework will not be accepted without an extenuating circumstance. Please plan ahead.</p>
+                    <p>3. Assignments will be posted by email and/or Blackboard. It is the responsibility of the student to frequently check their email and Blackboard for course changes and updates.</p>
+                    <p>4. The assigned textbook is not required, but will serve as a good reference.  </p>
+                    <p>5. Students with documented disabilities who are seeking academic accommodations should contact the Office of Accessibility Services, Union 222, oas@ucmo.edu, 660.543.4421.</p>
+                    <p>6. Advanced arrangement for unavoidable absences should be made whenever possible. Neither absence nor notification of absence relieves you of the responsibility of meeting all course requirements.</p>
+                    <p>7. Homework is to be done independently unless otherwise directed.</p>
+                    <p>8. ChatGPT/LLM use policy: You are allowed to consult with LLMs to answer specific questions about code, as an information provider. However, using GPT to generate entire portions of your homework assignment is not allowed, the work must be your own. Assignments suspected of doing so will receive a 0. </p>
+                    <p>9. Any form of academic dishonesty will be dealt with according to the guidelines found at https://www.ucmo.edu/offices/general-counsel/university-policy-library/academic-policies/academic-honesty-policy/.</p>
+                </div>
+                
+            
+                <div>
+                    <h4>Title IX Sexual Misconduct</h4>
+                    <p> The University of Central Missouri seeks to foster a safe and healthy environment built on mutual respect and trust. Sex discrimination, including sexual harassment, sexual violence, and other forms of sexual misconduct will not be tolerated. All faculty and most staff are considered mandated reporters by the University and must disclose all information they receive about sexual misconduct to the Title IX Coordinator. As a faculty member of the University, I am a mandated reporter.</p>
+                    <p>If you, or someone you know, has experienced sexual misconduct, please know assistance and options are available. UCM strongly encourages all members of the community to seek support and report incidents of sexual misconduct to the Title IX Office. Anyone who wishes to report sexual misconduct https://www.ucmo.edu/consumer-information/title-ix-sex-discrimination-and-sexual-assault/reporting-options/ or to learn more about the University process and options available, please visit https://www.ucmo.edu/consumer-information/title-ix-sex-discrimination-and-sexual-assault/support-and-resources/ </p>
+                </div>
+            
+           </div>
+        </div>
+    </div>
+    <div class="footer mt-4">
+        <p>University of Central Missouri</p>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var url = document.location.toString();
+            if (url.match('#')) {
+                $('.nav-tabs a[href="#' + url.split('#')[1] + '"]').tab('show');
+            } 
+            $('.nav-tabs a').on('shown.bs.tab', function (e) {
+                var hash = e.target.hash;
+                var newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + hash;
+                history.replaceState(null, null, newUrl);
+            });
+        });
+    </script>
+</body>
+</html>

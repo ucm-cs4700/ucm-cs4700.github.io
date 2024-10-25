@@ -1,0 +1,147 @@
+1. Introduction
+	Russell & Norvig Ch. 1.1-5
+    - What is AI?
+    - The Foundations of Artificial Intelligence
+    - The History of Artificial Intelligence
+    - The State of the Art
+    - Risks and Benefits
+
+2. Agents
+	Russell & Norvig Ch. 2.1-4
+    - Agents and Environments
+    - Good Behavior: The Concept of Rationality
+    - The Nature of Environments
+    - The Structure of Agents
+
+3. Uninformed Search
+	Russell & Norvig Ch. 3.1-4
+    - Problem-Solving Agents
+    - Example Problems
+    - Search Algorithms
+    - Uninformed Search Strategies
+
+4. Informed Search
+	Russell & Norvig Ch. 3.5-6
+    - Informed (Heuristic) Search Strategies
+    - Heuristic Functions
+
+5. Local Search
+	Russell & Norvig Ch. 4.1-2
+    - Local Search and Optimization Problems
+    - Local Search in Continuous Spaces
+
+6. Games 1
+	Russell & Norvig Ch. 5.1-4
+    - Game Theory
+    - Optimal Decisions in Games 
+    - Heuristic Alpha–Beta Tree Search
+    - Monte Carlo Tree Search
+
+7. Games 2
+	Russell & Norvig Ch. 5.5-7
+    - Stochastic Games
+    - Partially Observable Games
+    - Limitations of Game Search Algorithms
+
+8. Constraint Satisfaction Problems (CSPs)
+	Russell & Norvig Ch. 6.1-5
+    - Defining Constraint Satisfaction Problems 
+    - Constraint Propagation: Inference in CSPs
+    - Backtracking Search for CSPs
+    - Local Search for CSPs
+    - The Structure of Problems
+
+9. Markov Decision Processes 1
+	Russell & Norvig Ch. 17.1-3
+    - Sequential Decision Problems
+    - Algorithms for MDPs
+    - Bandit Problems
+
+10. Markov Decision Processes 2
+	Russell & Norvig Ch. 17.1-3
+
+11. Reinforcement Learning 1
+	Russell & Norvig Ch. 22.1-3
+    - Learning from Rewards
+    - Passive Reinforcement Learning
+    - Active Reinforcement Learning
+
+12. Reinforcement Learning 1
+	Russell & Norvig Ch. 22.1-3
+
+13. Probability
+	Russell & Norvig Ch. 12.1-6
+    - Acting under Uncertainty
+    - Basic Probability Notation
+    - Inference Using Full Joint Distributions
+    - Independence
+    - Bayes’ Rule and Its Use
+    - Naive Bayes Models
+
+14. Bayes Net and Independence
+	Russell & Norvig Ch. 13.1-2
+    - Representing Knowledge in an Uncertain Domain
+    - The Semantics of Bayesian Networks
+
+15. Midterm Review
+
+16. MIDTERM
+
+17. Hidden Markov Models
+	Russell & Norvig Ch. 
+
+18. Logical Agents, propositional logic
+	Russell & Norvig Ch. 
+
+19. Logical Agents, propositional logic
+	Russell & Norvig Ch. 
+
+20. First Order Logic
+	Russell & Norvig Ch. 
+
+21. Planning
+	Russell & Norvig Ch. 
+
+22. Machine Learning 1
+	Russell & Norvig Ch. 
+
+23. Machine Learning 2
+	Russell & Norvig Ch. 
+
+24. Machine Learning 3
+	Russell & Norvig Ch. 
+
+25. Machine Learning 4
+	Russell & Norvig Ch. 
+
+26. Natural Language Processing (NLP)
+	Russell & Norvig Ch. 
+
+27. Large Language Models (LLMs)
+	Russell & Norvig Ch. 
+
+28. Vision
+	Russell & Norvig Ch. 
+
+29. Robotics
+	Russell & Norvig Ch. 
+
+30. Final Review
+    -
+
+31. Project Presentations
+	Russell & Norvig Ch. 
+
+32. FINAL
+
+
+
+
+
+-------------------------------------------------
+
+Interesting/Useful Links
+
+
+1. Javascript visuals for teaching from the book.
+    http://aimacode.github.io/aima-javascript/

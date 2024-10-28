@@ -88,43 +88,43 @@
 16. MIDTERM
 
 17. Hidden Markov Models
-	Russell & Norvig Ch. 
+	Russell & Norvig Ch. 14.1-3
 
 18. Logical Agents, propositional logic
-	Russell & Norvig Ch. 
+	Russell & Norvig Ch. 7.1-4
 
 19. Logical Agents, propositional logic
-	Russell & Norvig Ch. 
+	Russell & Norvig Ch. 7.5-7
 
 20. First Order Logic
-	Russell & Norvig Ch. 
+	Russell & Norvig Ch. 8.1-4 
 
 21. Planning
-	Russell & Norvig Ch. 
+	Russell & Norvig Ch. 11.1-3
 
-22. Machine Learning 1
-	Russell & Norvig Ch. 
+22. Machine Learning 1 - Linear Regression
+	Russell & Norvig Ch. 19.6
 
-23. Machine Learning 2
-	Russell & Norvig Ch. 
+23. Machine Learning 2 - Feed Forward and Convolutional Nets
+	Russell & Norvig Ch. 21.1-21.3
 
-24. Machine Learning 3
-	Russell & Norvig Ch. 
+24. Machine Learning 3 - Learning Algorithms, Generalization, Recurrent Nets
+	Russell & Norvig Ch. 21.4-6
 
-25. Machine Learning 4
-	Russell & Norvig Ch. 
+25. Machine Learning 4 - Developing ML Systems
+	Russell & Norvig Ch. 19.9
 
 26. Natural Language Processing (NLP)
-	Russell & Norvig Ch. 
+	Russell & Norvig Ch. 23
 
 27. Large Language Models (LLMs)
-	Russell & Norvig Ch. 
+	N/A
 
 28. Vision
-	Russell & Norvig Ch. 
+	Russell & Norvig Ch. 25
 
 29. Robotics
-	Russell & Norvig Ch. 
+	Russell & Norvig Ch. 26
 
 30. Final Review
     -
